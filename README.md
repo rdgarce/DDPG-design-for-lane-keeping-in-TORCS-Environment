@@ -2,7 +2,10 @@
 My absolutely first repository on github!
 
 This repository contains my bachelor's degree thesis project: Designing a DDPG algorithm for approaching the lane keeping problem in the autonomous ground vehicle driving.
-I used Python with keras and tensorflow for working with neural networks and TORCS as the environment in which the experiment took place.
+
+## Pre-requisites
+- Python with Keras and Tensorflow
+- TORCS game with SCR patch
 
 ## Structure
 The work is structured as follows.
