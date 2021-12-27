@@ -17,7 +17,7 @@ The work is structured as follows.
 │   │   └── agent.py #Implementation of the agent class and all of its functions
 │   ├── Client.py #Main python script to launch the experiment
 │   └── snakeoil.py #Implementation of the client interface for the interaction with TORCS game
-├── Docs #Folder containing documents
+└── Docs #Folder containing documents
     ├── Tesi.pdf #Thesis on DDPG design for lane keeping in TORCS Environment. Italian language
     └── latex_template #Latex template folder of my thesis project
     
