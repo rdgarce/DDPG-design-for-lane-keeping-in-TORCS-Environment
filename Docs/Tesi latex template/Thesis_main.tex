@@ -1,0 +1,132 @@
+\documentclass[12pt, a4paper]{report}
+
+
+
+\let\openright=\clearpage
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+%
+%		Additional useful packages
+%
+\usepackage[T1]{fontenc}			% output font encoding
+\usepackage[utf8]{inputenc}			% accented letters from keyboardhttps://www.overleaf.com/project/61826ed8085fb144b116f4b3
+\usepackage[italian]{babel}		% document languages (the last is the main one)
+\usepackage{setspace}				
+\usepackage{multicol}				% multi-column layout
+\usepackage{url}					% uniform resource locator
+\usepackage{blindtext}
+\usepackage{verbatim}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{afterpage}
+\usepackage{amsmath}        
+\usepackage{amsfonts}       
+\usepackage{amsthm} 
+\usepackage{amssymb}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{bm}      
+\usepackage{caption}       
+\usepackage{graphicx}       
+\usepackage{psfrag}         
+\usepackage{fancyvrb}
+\usepackage{bbding}         
+\usepackage{dcolumn}        
+\usepackage{booktabs}       
+\usepackage{paralist}       
+\usepackage{indentfirst}    
+\usepackage[nottoc]{tocbibind}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{pdflscape}
+\usepackage{calrsfs}
+\usepackage{subfig}
+\usepackage{minted}
+
+
+\newcommand{\FIGDIR}{./Figures}    		% directory containing figures
+
+
+\usepackage[toc]{appendix}
+
+
+
+
+
+
+%%%%% ------------------------------------------------------------
+\DefineVerbatimEnvironment{PCinout}{Verbatim}{fontsize=\small, frame=single}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+
+\DeclareMathOperator{\pr}{\textsf{P}}
+\DeclareMathOperator{\E}{\textsf{E}\,}
+\DeclareMathOperator{\var}{\textrm{var}}
+\DeclareMathOperator{\sd}{\textrm{sd}}
+
+
+\newcommand{\T}[1]{#1^\top}        
+
+\newcommand{\goto}{\rightarrow}
+\newcommand{\gotop}{\stackrel{P}{\longrightarrow}}
+\newcommand{\maon}[1]{o(n^{#1})}
+\newcommand{\abs}[1]{\left|{#1}\right|}
+\newcommand{\dint}{\int_0^\tau\!\!\int_0^\tau}
+\newcommand{\isqr}[1]{\frac{1}{\sqrt{#1}}}
+
+\newcommand{\pulrad}[1]{\raisebox{1.5ex}[0pt]{#1}}
+\newcommand{\mc}[1]{\multicolumn{1}{c}{#1}}
+
+\newcommand\blankpage{%
+	\null
+	\thispagestyle{empty}%
+	\addtocounter{page}{-1}%
+	\newpage}
+
+\usepackage{fancyvrb}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+%
+%
+%%%	MAIN DOCUMENT
+%
+%
+
+\begin{document}
+
+
+
+\include{Header}
+
+%\input{dedica}
+
+\pagestyle {plain}
+\pagenumbering{arabic}
+\include{Introduction}
+\include{Chapter_01}
+\include{Chapter_02}
+\include{Chapter_03}
+\include{Chapter_04}
+\include{Chapter_05}
+
+
+
+
+
+
+
+%%	APPENDIX
+
+%\include{Appendix}
+
+
+%%	REFERENCES
+
+
+\bibliographystyle{plain}
+\bibliography{ref}
+
+\end{document}
+

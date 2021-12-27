@@ -1,0 +1,15 @@
+\chapter*{Conclusioni}
+
+In questa tesi ci si è approcciati al problema del lane keeping nell'ambiente di simulazione di guida TORCS utilizzando un approccio di Reinforcement Learning: il DDPG.
+\newline
+
+Si è partiti facendo un'introduzione al Reinforcement Learning per poi approdare alle definizioni dei più comuni algoritmi di Deep RL, in cui ricade anche il DDPG. Si è poi presentato nel dettaglio l'ambiente di simulazione TORCS, evidenziandone lati positivi e criticità, le quali hanno avuto bisogno di ulteriori attenzioni sul piano implementativo. Si è spiegata l'importanza del problema del lane keeping nel campo dell'AU e si è utilizzato il DDPG proprio per la creazione di un sistema decisionale end-to-end per la gestione di tale processo nel caso di un veicolo terrestre.
+\newline
+
+Infine si sono allenati molteplici modelli e si sono effettuate svariate simulazioni su diverse combinazioni di variazioni parametriche, come il rumore esplorativo e la reward function. Dato che questi test sono stati svolti in un simulatore di gare automobilistiche, ci si è posti il problema di identificare un modello che avesse ottime performance nel mantenimento di carreggiata, senza però mettere in secondo piano la metrica della velocità dell'auto. Per tale ragione il migliore è risultato essere il Modello 4, con reward senza controllo puntuale sulla trackPos e rumore esplorativo Ornstein-Uhlenbeck Mod.
+\newline
+
+L'OU si è dimostrato avere performance migliori rispetto alle altre due classi di rumore esplorativo mentre la reward function, caratterizzata dall'avere un maggiore grado di libertà sulla posizione dell'auto in carreggiata, ha permesso di ottenere ottime performance nel caso di applicazione studiato.
+\newline
+
+In defintiva il DDPG si è dimostrato essere un validissimo algoritmo per la creazione di un sistema decisionale end-to-end per il lane keeping di un veicolo terrestre.
