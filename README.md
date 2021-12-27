@@ -1,6 +1,8 @@
 # 🏎 DDPG design for lane keeping in TORCS Environment
 My absolutely first repository on github!
-This repository contains my bachelor's degree thesis project: Designing a DDPG alghorithm for managing the lane keeping problem in the ground veichle, single agent, scenario.
+
+This repository contains my bachelor's degree thesis project: Designing a DDPG algorithm for approaching the lane keeping problem in the autonomous ground vehicle driving.
+I used Python with keras and tensorflow for working with neural networks and TORCS as the environment in which the experiment took place.
 
 ## Structure
 The work is structured as follows.
