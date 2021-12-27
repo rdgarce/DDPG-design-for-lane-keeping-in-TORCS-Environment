@@ -1,5 +1,6 @@
-# DDPG design for lane keeping in TORCS Environment
+# 🏎 DDPG design for lane keeping in TORCS Environment
 My absolutely first repository on github!
+This repository contains my bachelor's degree thesis project: Designing a DDPG alghorithm for managing the lane keeping problem in the ground veichle, single agent, scenario.
 
 ## Structure
 The work is structured as follows.
