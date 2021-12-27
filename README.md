@@ -9,5 +9,9 @@ The work is structured as follows.
         ├── OU.py #Implementation of the Ornstein–Uhlenbeck noise with the stochastic brake mod
         ├── GN.py #Implementation of the Gaussian Noise
         ├── TVNoise.py #Implementation of the Time Variant Noise
+        ├── conditioning.py #Implementation of a utility function for interacting with TORCS env
+        ├── networks.py #Implementation of Actor and Critic networks
+        ├── replayBuffer.py #Implementation of the experience replay required by DDPG
+        ├── reward.py #Implementation of the env. reward function
         
 ```
