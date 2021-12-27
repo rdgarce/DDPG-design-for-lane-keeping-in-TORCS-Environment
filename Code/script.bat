@@ -1,1 +1,0 @@
-c: & cd "C:\Program Files (x86)\torcs" & wtorcs -nolaptime -nodamage -nofuel -t 10000000
