@@ -34,7 +34,7 @@ class Critic:
     V = Dense(1, activation = 'linear')(h3)
 
     model = Model(inputs = [S,A], outputs = V)
-    model.compile(optimizer = Adam(learning_rate = clr))
+    #model.compile(optimizer = Adam(learning_rate = clr))
 
     return model
 
@@ -77,7 +77,7 @@ class Actor:
     V = Concatenate()(lista)
 
     model = Model(inputs = S, outputs = V)
-    model.compile(optimizer = Adam(learning_rate = alr))
+    #model.compile(optimizer = Adam(learning_rate = alr))
 
     return model
 

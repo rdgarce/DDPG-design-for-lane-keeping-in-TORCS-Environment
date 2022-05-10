@@ -3,25 +3,25 @@ from snakeoil import *
 import pickle
 import shutil
 
+
 PORT = 3001
-training_mode = True
-load_model = True
+TRAINING_MODE = False
+LOAD_MODEL = True
+SAVE_ACTIONS = False
+STEPS = 6000
+EPISODES = 1000
 
-save_actions = False
-saved_actions = list()
-
-Steps = 6000
-Episodes = 1000
+saved_actions = []
 
 training_data = {
     "episode_count" : -1, 
-    "episodic_reward_list": list(), 
-    "avg_reward_list": list()
+    "episodic_reward_list": [], 
+    "avg_reward_list": []
     }
 
-agent = Agent(training=training_mode)
+agent = Agent(training=TRAINING_MODE)
 
-if load_model:
+if LOAD_MODEL:
     load_status = agent.load_agent()
     
     if load_status == 0:
@@ -32,13 +32,12 @@ if load_model:
             training_data["episodic_reward_list"]
             training_data["avg_reward_list"]
         except:
-            print("File training_data.pkl non trovato o corrotto -> Il modello è stato caricato \
-                    ma le statistiche sono azzerate ")
+            print("File training_data.pkl non trovato o corrotto -> Il modello è stato caricato ma le statistiche sono azzerate ")
             
             training_data = {
                 "episode_count" : -1, 
-                "episodic_reward_list": list(), 
-                "avg_reward_list": list()
+                "episodic_reward_list": [], 
+                "avg_reward_list": []
                 }
     elif load_status == -1:
         print("Nessun modello trovato: Si parte da zero!")
@@ -50,11 +49,11 @@ else:
 
 
 input(f"Si parte dall'episodio {training_data['episode_count']+1}: Clicca un tasto per partire")
-C = Client(Host = 'localhost', Steps = Steps, Port = PORT)
+C = Client(Host = 'localhost', Steps = STEPS, Port = PORT)
 
 C.get_servers_input()
 
-for episode in range(training_data['episode_count']+1, Episodes+training_data['episode_count']+1):
+for episode in range(training_data['episode_count'] + 1, EPISODES + training_data['episode_count']+1):
     
     
     done = False
@@ -62,7 +61,7 @@ for episode in range(training_data['episode_count']+1, Episodes+training_data['e
     episodic_reward = 0
     low_velocity_count = 0
 
-    while not done and step < Steps:
+    while not done and step < STEPS:
         current_state = conditionDict(C.S.d, STATE_SPACE, STATE_SPACE_NORM)
         #print(current_state)
         action = agent.act(current_state)
@@ -86,7 +85,7 @@ for episode in range(training_data['episode_count']+1, Episodes+training_data['e
         if C.S.d['speedX']>170:
             C.R.d['gear']=6
 
-        if save_actions:
+        if SAVE_ACTIONS:
             saved_actions.append(action)
         
         C.respond_to_server()
@@ -122,22 +121,22 @@ for episode in range(training_data['episode_count']+1, Episodes+training_data['e
     training_data["episode_count"] = episode
     training_data["avg_reward_list"].append(avg_reward)
 
-    if training_mode:
+    if TRAINING_MODE:
         agent.save_agent(episode)
     
         file = open(os.path.join(os.getcwd(),CHKPT_DIR,"training_data.pkl"), "wb")
         pickle.dump(training_data, file)
         file.close()
 
-    if save_actions:
+    if SAVE_ACTIONS:
         file = open(os.path.join(os.getcwd(),CHKPT_DIR,"saved_actions.pkl"), "wb")
         pickle.dump(saved_actions, file)
         file.close()
 
     print("Episodio {}: Ricompensa: {}, Media ricompense: {}".format(episode, episodic_reward, avg_reward))
 
-    C = Client(Host = 'localhost', Steps = Steps, Port = PORT)
+    C = Client(Host = 'localhost', Steps = STEPS, Port = PORT)
     C.get_servers_input()
     
-C.shutdown()   
+C.shutdown()
 print("Tutti gli episodi sono terminati: termino esecuzione")
