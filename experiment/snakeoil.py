@@ -60,7 +60,7 @@ PI= 3.14159265359
 
 PORT = 3001
 GLOBAL_PATH = os.getcwd()
-MODELS_PATH = os.path.join( GLOBAL_PATH ,'DDPG', 'models' )
+MODELS_PATH = os.path.join( GLOBAL_PATH, 'models' )
 
 # Initialize help messages
 ophelp=  'Options:\n'
