@@ -10,7 +10,7 @@ This repository contains my bachelor's degree thesis project: Designing a DDPG a
 ## Structure
 The work is structured as follows.
 ```
-├── Code                      #The main folder of all the code of the experiment
+├── src                      #The main folder of all the code of the experiment
 │   ├── DDPG                  #Folder containing all the classes and functions for implementing the algo.
 │   │   ├── OU.py             #Implementation of the Ornstein–Uhlenbeck noise with the stochastic brake mod
 │   │   ├── GN.py             #Implementation of the Gaussian Noise
@@ -23,7 +23,7 @@ The work is structured as follows.
 │   │   └── agent.py          #Implementation of the agent class and all of its functions
 │   ├── Client.py             #Main python script to launch the experiment
 │   └── snakeoil.py           #Implementation of the client interface for the interaction with TORCS game
-└── Docs                      #Folder containing documents
+└── docs                      #Folder containing documents
     ├── Tesi.pdf              #Thesis on DDPG design for lane keeping in TORCS Environment. Italian language
     └── latex_template        #Latex template folder of my thesis project
     
